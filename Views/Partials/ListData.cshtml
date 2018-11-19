@@ -1,0 +1,42 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{var myMessage = "Hello World";}
+@{var frutaList = new List<String>();}
+
+<p>The value of myMessage is: @myMessage</p>
+
+@{
+frutaList.Add("Manzanas");
+frutaList.Add("Peras");
+frutaList.Add("Naranjas");
+}
+
+<ul>
+    @foreach (String fruta in frutaList)
+    {
+        <li>@fruta</li>
+    }
+</ul>
+@{
+string[] a1 = {"Pepe", "Soto", "544545454-R", "19/11/2017"};
+string[] a2 = {"Juan", "Morera", "908776564-C", "11/09/2013"};
+
+string[][] arr = {a1, a2};
+}
+<table style="width:100%">
+  <tr>
+     <th>Firstname</th>
+     <th>Lastname</th> 
+     <th>DNI</th> 
+     <th>Date</th>
+  </tr>
+    @foreach (string[] array in arr)
+    {
+        <tr>
+        @foreach (string student in array)
+        {
+            <td style="text-align: center">@student</td>
+        }
+        </tr>
+    }
+
+</table>
